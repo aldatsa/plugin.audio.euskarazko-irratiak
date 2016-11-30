@@ -1,0 +1,24 @@
+{
+    streams: [{
+        "name": "Bilbo Hiria Irratia",
+        "url": "http://www.bilbohiria.eus/zuzen2/"
+    }, {
+        "name": "Euskalerria Irratia",
+        "url": "http://euskalerriairratia.eus/irratia_zuzenean/"
+    }, {
+        "name": "Gure Irratia",
+        "url": "http://heberg.radioludo.com:8007/stream"
+    }, {
+        "name": "Hala Bedi",
+        "url": "http://halabedi.eus/online/"
+    }, {
+        "name": "Irulegiko Irratia",
+        "url": "http://heberg.radioludo.com:8007/stream2"
+    }, {
+        "name": "Ttanttakun",
+        "url": "https://ttanttakun.org/stream/ttanttakun.ogg"
+    }, {
+        "name": "Xorroxin Irratia",
+        "url": "http://xorroxinirratia.streaming-pro.com:8053/"
+    }
+}
