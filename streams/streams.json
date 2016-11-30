@@ -1,5 +1,5 @@
 {
-    streams: [{
+    "streams": [{
         "name": "Bilbo Hiria Irratia",
         "url": "http://www.bilbohiria.eus/zuzen2/"
     }, {
@@ -20,5 +20,5 @@
     }, {
         "name": "Xorroxin Irratia",
         "url": "http://xorroxinirratia.streaming-pro.com:8053/"
-    }
+    }]
 }
