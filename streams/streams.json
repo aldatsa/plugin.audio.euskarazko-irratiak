@@ -1,16 +1,16 @@
 {
     "streams": [{
         "name": "Bilbo Hiria Irratia",
-        "url": "http://www.bilbohiria.eus/zuzen2/"
+        "url": "http://groove.wavestreamer.com:7429"
     }, {
         "name": "Euskalerria Irratia",
-        "url": "http://euskalerriairratia.eus/irratia_zuzenean/"
+        "url": "http://server4.beatproducciones.com:8014/"
     }, {
         "name": "Gure Irratia",
         "url": "http://heberg.radioludo.com:8007/stream"
     }, {
         "name": "Hala Bedi",
-        "url": "http://halabedi.eus/online/"
+        "url": "http://server3.20comunicacion.com:8022/"
     }, {
         "name": "Irulegiko Irratia",
         "url": "http://heberg.radioludo.com:8007/stream2"
