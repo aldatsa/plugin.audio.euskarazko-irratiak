@@ -21,6 +21,9 @@
         "name": "Eguzki irratia",
         "url": "http://46.105.24.175:9000/eguzki.mp3"
     }, {
+        "name": "EITB irratia",
+        "url": "http://hdstreamflash-lh.akamaihd.net/i/EITB_Irratia_1@109221/index_128_a-p.m3u8"
+    }, {
         "name": "Esan Erran irratia",
         "url": "http://esanerran.ametza.eus/zuzenean.ogg"
     }, {
@@ -29,6 +32,9 @@
     }, {
         "name": "Euskalerria irratia",
         "url": "http://server4.beatproducciones.com:8014/"
+    }, {
+        "name": "Gaztea irratia",
+        "url": "http://hdstreamflash-lh.akamaihd.net/i/Gaztea_Irratia_1@109222/index_128_a-p.m3u8"
     }, {
         "name": "Gure Irratia",
         "url": "http://heberg.radioludo.com:8007/stream"
