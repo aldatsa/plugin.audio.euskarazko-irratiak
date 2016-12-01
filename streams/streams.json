@@ -72,6 +72,10 @@
         "url": "http://heberg.radioludo.com:8007/stream2",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/irulegiko-irratia.jpg"
     }, {
+        "name": "Miribilla irratia",
+        "url": "http://miribilla.dyndns.org:8000/",
+        "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/miribilla-irratia.png"
+    }, {
         "name": "Oiartzun irratia",
         "url": "http://50.7.129.122:8341/",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/oiartzun-irratia.jpg"
