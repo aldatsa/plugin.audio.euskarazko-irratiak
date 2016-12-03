@@ -24,6 +24,10 @@
         "url": "http://groove.wavestreamer.com:7429",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/bilbo-hiria-irratia.gif"
     }, {
+        "name": "Bizkaia irratia",
+        "url": "http://188.93.73.98:8076/",
+        "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/"
+    }, {
         "name": "Eguzki irratia",
         "url": "http://46.105.24.175:9000/eguzki.mp3",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/eguzki-irratia.jpg"
