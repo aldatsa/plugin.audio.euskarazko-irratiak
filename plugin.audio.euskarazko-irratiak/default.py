@@ -32,7 +32,9 @@ def list_streams(streams):
     # iterate over the contents of the dictionary songs to build the list
     for stream in streams:
         # create a list item using the stream's name for the label
-        li = xbmcgui.ListItem(label=stream['name'], thumbnailImage=stream['logo'])
+        li = xbmcgui.ListItem(label=stream['name'])
+        # set the thumbnail image
+        li.setArt({'thumb': stream['logo']})
         # set the list item to playable
         li.setProperty('IsPlayable', 'true')
         # build the plugin url for Kodi
