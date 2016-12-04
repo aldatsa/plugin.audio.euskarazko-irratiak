@@ -100,6 +100,10 @@
         "url": "http://82.130.201.125:8000/uhinak",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/uhinak-irratia.png"
     }, {
+        "name": "Xiberoko Botza",
+        "url": "http://82.165.24.146:8000/xiberokobotza.mp3",
+        "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/xiberoko-botza.png"
+    }, {
         "name": "Xorroxin irratia",
         "url": "http://xorroxinirratia.streaming-pro.com:8053/",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/xorroxin-irratia.jpeg"
