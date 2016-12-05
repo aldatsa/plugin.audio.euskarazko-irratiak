@@ -10,6 +10,11 @@ KODIren gehigarrien errepositorio ofizialean erabilgarri: http://addons.kodi.tv/
 
 Artikulu honetan duzu jakin beharreko guztia: plugina nola instalatu, KODI euskaraz nola jarri... http://www.iametza.eus/euskara/bloga/euskarazko-irratiak-kodi-multimedia-zentroan-entzuteko-plugina
 
+## OpenElec eta orokorrean Kodi bertsio zaharrak erabiltzen dituztenentzat oharra
+Plugin honek instalatzeko eskatzen duen python bertsioa ez dago eskuragarri OpenElec distribuzioan eta ondorioz instalazioak huts egiten du.
+
+Plugina erabili ahal izateko, zip fitxategia sortu behar da `for-older-kodi-versions` adarreko (branch) kodea oinarri hartuta. Adar horretako kodea erabiliz plugina instalatu eta erabil daiteke.
+
 ##License
 This plugin is free software/open source, and is distributed under the [GNU General Public License v3](http://www.gnu.org/licenses/gpl.html) license.
 
