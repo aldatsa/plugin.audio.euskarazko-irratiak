@@ -4,6 +4,29 @@ Listen to nearly 30 radio stations that broadcast, completely or at least partia
 
 Plugin honi esker programazio osoa, edo gutxienez zati bat, euskaraz emititzen duten ia 30 irrati zuzenean entzun ditzakezu zure KODI multimedia zentroan.
 
+## Nola instalatu
+
+Une honetan KODIren gordailu ofizialean 16 bertsioa (Jarvis) edo berriagoetarako (17 Krypton betan dago) bakarrik onartzen dituzte plugin berriak. Horren ondorioz erabiltzen duzu KODIren bertsioaren arabera instalatzeko jarraitu beharreko pausoak desberdinak dira.
+
+Artikulu honetan duzu jakin beharreko guztia: plugina nola instalatu, KODI euskaraz nola jarri... http://www.iametza.eus/euskara/bloga/euskarazko-irratiak-kodi-multimedia-zentroan-entzuteko-plugina
+
+### KODIren bertsioa >= 16
+
+16 bertsioa edo berriagoa erabiltzen baduzu errepositorio ofizialetatik instala dezakezu plugina. Errepositorio ofizialetatik instalatzearen abantaila nagusia eguneraketa automatikoak dira. Pluginaren bertsio berriak argitaratzean automatikoki eguneratuko da zure sistema.
+
+Artikulu honetan aurkituko dituzu egin beharrekoaren azalpenak pausoz pauso:
+http://www.iametza.eus/euskara/bloga/euskarazko-irratiak-kodi-multimedia-zentroan-entzuteko-plugina#kodiren-bertsioa-hb-16
+
+Hala ere, nahiago baduzu zip fitxategitik ere instala dezakezu, baina kontutan izan pluginaren bertsio berri bat dagoenean berriz ere eskuz instalatu beharko duzula. [Klikatu hemen zip fitxategia deskargatzeko](https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/releases/download/v1.0.3/plugin.audio.euskarazko-irratiak-1.0.3.zip).
+
+### KODIren bertsioa < 16
+
+KODIren bertsio zaharragoetan euskarazko irratiak entzuteko plugina instalatzeko jarraitu beharreko pausoak desberdinak dira. Bertsio hauetarako plugina gordailu ofizialean ez dagoenez zip fitxategitik instalatu behar da. Aurrerago pluginaren bertsio berriak badaude, kasu honetan plugina eskuz eguneratu beharko duzu. [Klikatu hemen zip fitxategia deskargatzeko](https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/releases/download/v1.0.3-for-older-kodi-versions/plugin.audio.euskarazko-irratiak-1.0.3-for-older-kodi-versions.zip).
+
+[Gamerauntsiak euskaratutako Recalbox banaketa](http://gamerauntsia.eus/bloga/recalbox-euskaraz/)ren erabiltzailea bazara, pauso hauek jarraitu behar dituzu, KODIren 15.2 bertsioa erabiltzen baitu. OpenElec banaketak ere KODIren bertsio zaharrago bat erabiltzen du (Mila esker jakinarazteagatik [@ander2](https://github.com/ander2/)).
+
+Zip fitxategia erabiliz KODI instalatzeko jarraitu beharreko pausoei buruzko zalantzarik baduzu begiratu artikulu hau: http://www.iametza.eus/euskara/bloga/euskarazko-irratiak-kodi-multimedia-zentroan-entzuteko-plugina#kodiren-bertsioa-t-16
+
 ##License
 This plugin is free software/open source, and is distributed under the [GNU General Public License v3](http://www.gnu.org/licenses/gpl.html) license.
 
