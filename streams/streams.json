@@ -92,6 +92,10 @@
         "url": "https://ttanttakun.org/stream/ttanttakun.ogg",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/ttan-ttakun-irratia.png"
     }, {
+        "name": "Txapa irratia",
+        "url": "http://zerb01.baibalab.net:8000/txapa.mp3",
+        "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/txapa-irratia.png"
+    }, {
         "name": "Uhinak irratia",
         "url": "http://82.130.201.125:8000/uhinak",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/uhinak-irratia.png"
