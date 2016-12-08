@@ -1,9 +1,5 @@
 {
     "streams": [{
-        "name": "Aiaraldea irratia",
-        "url": "http://82.130.201.112:9001/aiaraldea.mp3",
-        "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/aiaraldea-irratia.png"
-    }, {
         "name": "Antxeta irratia",
         "url": "http://82.165.24.146:8000/antxetairratia.mp3",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/antxeta-irratia.png"
