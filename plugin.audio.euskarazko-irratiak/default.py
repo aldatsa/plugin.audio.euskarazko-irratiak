@@ -97,12 +97,13 @@ def get_arrosa_programs(page):
     programs = {}
 
     programs_li = page.select('.dcw > li')
-
+    
     for program in programs_li:
         program_a = program.find('a', recursive=False)
-        name = program_a.string
-        url = program_a['href']
-        programs[name] = {'name': name, 'url': url}
+        if program_a is not None:
+            name = program_a.string
+            url = program_a['href']
+            programs[name] = {'name': name, 'url': url}
 
     return programs
 
