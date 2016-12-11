@@ -97,7 +97,7 @@ def get_arrosa_programs(page):
     programs = {}
 
     programs_li = page.select('.dcw > li')
-    
+
     for program in programs_li:
         program_a = program.find('a', recursive=False)
         if program_a is not None:
@@ -129,7 +129,9 @@ def get_arrosa_audios_from_page(page):
     for audio in audios_div:
         title = audio.select('.big-title h3 a')[0].text
         date = audio.select('.magz-meta')[0].text.split('|')[0].strip()
-        image = audio.select('.magz-image img')[0]['src']
+        image = ''
+        if len(audio.select('.magz-image img')) > 0:
+            image = audio.select('.magz-image img')[0]['src']
         url = ''
         if len(audio.select('.powerpress_link_d')) > 0:
             url = audio.select('.powerpress_link_d')[0]['href']
