@@ -74,7 +74,7 @@ def get_arrosa_radios_with_podcasts(page):
     for radio in radios_li:
         radio_a = radio.find('a', recursive=False)
         name = radio_a.string
-        url = radio_a['url']
+        url = radio_a['href']
         radios[radio_a.string] = {'name': radio_a.string, 'url': url}
 
     return radios
@@ -83,7 +83,7 @@ def list_radios_with_podcasts(radios):
     radio_list = []
     # iterate over the contents of the list of radios to build the list
     for key, value in sorted(radios.items()):
-        url = build_url({'mode': 'podcast-radio', 'foldername': value['name'], 'url': value['url']})
+        url = build_url({'mode': 'podcasts-radio', 'foldername': value['name'], 'url': value['url']})
         li = xbmcgui.ListItem(value['name'], iconImage='DefaultFolder.png')
         radio_list.append((url, li, False))
     # add list to Kodi per Martijn
@@ -123,7 +123,7 @@ def main():
     elif mode[0] == 'stream':
         # pass the url of the stream to play_stream
         play_stream(args['url'][0])
-    # the user wants to see list of radios that have podcasts
+    # the user wants to see the list of radios that have podcasts
     elif mode[0] == 'podcasts-radios':
         # parse the website of arrosa irrati sarea
         arrosa_page = get_page(ARROSA_PODCASTS_URL)
@@ -131,7 +131,11 @@ def main():
         podcasts = get_arrosa_radios_with_podcasts(arrosa_page)
         # display the list of radios that have podcasts
         list_radios_with_podcasts(podcasts)
-
+    # the user wants to see the list of podcasts of a radio
+    elif mode[0] == 'podcasts-radio':
+        # parse the website of the podcast of the selected radio
+        radio_page = get_page(args['url'][0])
+        print radio_page
 if __name__ == '__main__':
     addon_handle = int(sys.argv[1])
     main()
