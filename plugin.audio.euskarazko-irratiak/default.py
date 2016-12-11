@@ -67,7 +67,7 @@ def get_page(url):
     return BeautifulSoup(r.text, 'html.parser')
 
 def get_arrosa_podcasts(page):
-    radios = []
+    radios = {}
 
     radios_li = page.select('.dcw > li')
 
@@ -78,16 +78,16 @@ def get_arrosa_podcasts(page):
             # Remove the multiple spaces between the words
             name = ' '.join(program.string.split())
             programs.append({'name': name, 'url': program['href']})
-        radios.append({'name': radio_a.string, 'programs': programs})
+        radios[radio_a.string] = {'name': radio_a.string, 'programs': programs}
 
     return radios
 
 def list_radios_with_podcasts(radios):
     radio_list = []
     # iterate over the contents of the list of radios to build the list
-    for radio in radios:
-        url = build_url({'mode': 'podcast-radio', 'foldername': radio['name']})
-        li = xbmcgui.ListItem(radio['name'], iconImage='DefaultFolder.png')
+    for key, value in sorted(radios.items()):
+        url = build_url({'mode': 'podcast-radio', 'foldername': value['name']})
+        li = xbmcgui.ListItem(value['name'], iconImage='DefaultFolder.png')
         radio_list.append((url, li, False))
     # add list to Kodi per Martijn
     # http://forum.kodi.tv/showthread.php?tid=209948&pid=2094170#pid2094170
