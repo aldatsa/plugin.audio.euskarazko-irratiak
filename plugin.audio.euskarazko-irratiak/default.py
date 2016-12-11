@@ -111,7 +111,7 @@ def list_programs(programs):
     program_list = []
     # iterate over the contents of the list of programs to build the list
     for key, value in sorted(programs.items()):
-        url = build_url({'mode': 'podcasts-radio-program', 'foldername': value['name'], 'url': value['url']})
+        url = build_url({'mode': 'podcasts-radio-program', 'foldername': urllib.quote(value['name'].encode('utf8')), 'url': value['url']})
         li = xbmcgui.ListItem(value['name'], iconImage='DefaultFolder.png')
         program_list.append((url, li, True))
 
