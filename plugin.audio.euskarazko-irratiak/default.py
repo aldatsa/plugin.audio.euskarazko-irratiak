@@ -54,12 +54,28 @@ def play_stream(url):
     # the list item is ready to be played by Kodi
     xbmcplugin.setResolvedUrl(addon_handle, True, listitem=play_item)
 
+def show_main_menu():
+    url = build_url({'mode': 'streams', 'foldername': 'Irratiak zuzenean'})
+    li = xbmcgui.ListItem('Irratiak zuzenean', iconImage='DefaultFolder.png')
+    xbmcplugin.addDirectoryItem(handle=addon_handle, url=url,
+                                listitem=li, isFolder=True)
+
+    url = build_url({'mode': 'podcasts', 'foldername': 'Podcast-ak'})
+    li = xbmcgui.ListItem('Podcast-ak', iconImage='DefaultFolder.png')
+    xbmcplugin.addDirectoryItem(handle=addon_handle, url=url,
+                                listitem=li, isFolder=True)
+
+    xbmcplugin.endOfDirectory(addon_handle)
+
 def main():
     args = urlparse.parse_qs(sys.argv[2][1:])
     mode = args.get('mode', None)
 
     # initial launch of add-on
     if mode is None:
+        show_main_menu()
+    # show the list of streams
+    elif mode[0] == 'streams':
         # get the JSON
         streams = get_streams(JSON_URL)
         # display the list of streams in Kodi
