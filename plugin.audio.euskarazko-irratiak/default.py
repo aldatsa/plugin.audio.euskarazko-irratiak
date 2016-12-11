@@ -77,7 +77,7 @@ def get_arrosa_podcasts(page):
         for program in radio.select('ul.children li a'):
             # Remove the multiple spaces between the words
             name = ' '.join(program.string.split())
-            programs.append({'name': name, 'url': program['href']})
+            programs[name] = {'name': name, 'url': program['href']}
         radios[radio_a.string] = {'name': radio_a.string, 'programs': programs}
 
     return radios

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.audio.euskarazko-irratiak" name="Euskarazko irratiak zuzenean" version="1.2.6" provider-name="Asier Iturralde (iametza.eus)">
+<addon id="plugin.audio.euskarazko-irratiak" name="Euskarazko irratiak zuzenean" version="1.2.7" provider-name="Asier Iturralde (iametza.eus)">
     <requires>
         <import addon="xbmc.python" version="2.24.0" />
         <import addon="script.module.requests" version="2.9.1"/>
