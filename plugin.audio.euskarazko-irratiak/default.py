@@ -75,7 +75,7 @@ def get_arrosa_radios_with_podcasts(page):
         radio_a = radio.find('a', recursive=False)
         name = radio_a.string
         url = radio_a['href']
-        radios[radio_a.string] = {'name': radio_a.string, 'url': url}
+        radios[name] = {'name': name, 'url': url}
 
     return radios
 
@@ -85,10 +85,48 @@ def list_radios_with_podcasts(radios):
     for key, value in sorted(radios.items()):
         url = build_url({'mode': 'podcasts-radio', 'foldername': value['name'], 'url': value['url']})
         li = xbmcgui.ListItem(value['name'], iconImage='DefaultFolder.png')
-        radio_list.append((url, li, False))
+        radio_list.append((url, li, True))
     # add list to Kodi per Martijn
     # http://forum.kodi.tv/showthread.php?tid=209948&pid=2094170#pid2094170
     xbmcplugin.addDirectoryItems(addon_handle, radio_list, len(radio_list))
+    # set the content of the directory
+    xbmcplugin.setContent(addon_handle, 'songs')
+    xbmcplugin.endOfDirectory(addon_handle)
+
+def get_arrosa_programs(page):
+    programs = {}
+
+    programs_li = page.select('.dcw > li')
+
+    for program in programs_li:
+        program_a = program.find('a', recursive=False)
+        name = program_a.string
+        url = program_a['href']
+        programs[name] = {'name': name, 'url': url}
+
+    print "+++++++++++++++++"
+    print "get_arrosa_programs"
+    print programs
+    print "+++++++++++++++++"
+
+    return programs
+
+def list_programs(programs):
+    program_list = []
+    # iterate over the contents of the list of programs to build the list
+    for key, value in sorted(programs.items()):
+        url = build_url({'mode': 'podcasts-radio-program', 'foldername': value['name'], 'url': value['url']})
+        li = xbmcgui.ListItem(value['name'], iconImage='DefaultFolder.png')
+        program_list.append((url, li, True))
+
+    print "+++++++++++++++++"
+    print "list_programs"
+    print program_list
+    print "+++++++++++++++++"
+
+    # add list to Kodi per Martijn
+    # http://forum.kodi.tv/showthread.php?tid=209948&pid=2094170#pid2094170
+    xbmcplugin.addDirectoryItems(addon_handle, program_list, len(program_list))
     # set the content of the directory
     xbmcplugin.setContent(addon_handle, 'songs')
     xbmcplugin.endOfDirectory(addon_handle)
@@ -135,7 +173,17 @@ def main():
     elif mode[0] == 'podcasts-radio':
         # parse the website of the podcast of the selected radio
         radio_page = get_page(args['url'][0])
-        print radio_page
+        #get the list of programs of the selected radio
+        programs = get_arrosa_programs(radio_page)
+
+        print "+++++++++++++++++"
+        print "main podcasts-radio"
+        print programs
+        print "+++++++++++++++++"
+
+        # display the list of programs of the selected radio
+        list_programs(programs)
+
 if __name__ == '__main__':
     addon_handle = int(sys.argv[1])
     main()
