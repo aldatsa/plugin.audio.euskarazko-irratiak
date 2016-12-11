@@ -127,11 +127,12 @@ def get_arrosa_audios_from_page(page):
 
     for audio in audios_div:
         title = audio.select('.big-title h3 a')[0].text
+        date = audio.select('.magz-meta')[0].text.split('|')[0].strip()
         image = audio.select('.magz-image img')[0]['src']
         url = ''
         if len(audio.select('.powerpress_link_d')) > 0:
             url = audio.select('.powerpress_link_d')[0]['href']
-        audios.append({'title': title, 'image': image, 'url': url})
+        audios.append({'title': title, 'date': date, 'image': image, 'url': url})
 
     return audios
 
@@ -155,13 +156,13 @@ def list_podcast_audios(audios):
     # iterate over the audios to build the list
     for audio in audios:
         # create a list item using the audio's title for the label
-        li = xbmcgui.ListItem(label=audio['title'])
+        li = xbmcgui.ListItem(audio['date'] + " - " + audio['title'])
         # set the thumbnail image
         li.setArt({'thumb': audio['image']})
         # set the list item to playable
         li.setProperty('IsPlayable', 'true')
         # build the plugin url for Kodi
-        url = build_url({'mode': 'stream', 'url': audio['url'], 'title': urllib.quote(audio['title'].encode('utf8'))})
+        url = build_url({'mode': 'stream', 'url': audio['url'], 'title': audio['date'] + " - " + urllib.quote(audio['title'].encode('utf8'))})
         # add the current list item to a list
         audio_list.append((url, li, False))
     # add list to Kodi per Martijn
