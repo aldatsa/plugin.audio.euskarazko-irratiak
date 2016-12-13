@@ -87,7 +87,7 @@ def list_podcast_radios(radios):
     radio_list = []
     # iterate over the contents of the list of radios to build the list
     for key, value in sorted(radios.items()):
-        url = build_url({'mode': 'podcasts-radio', 'foldername': value['name'], 'url': value['url']})
+        url = build_url({'mode': 'podcasts-radio', 'foldername': value['name'], 'url': value['url'], 'name': value['name']})
         li = xbmcgui.ListItem(value['name'], iconImage='DefaultFolder.png')
         radio_list.append((url, li, True))
     # add list to Kodi per Martijn
@@ -112,6 +112,7 @@ def get_arrosa_programs(page):
     return programs
 
 def get_eitb_nahieran_programs(radio=None):
+    programs_dict = {}
     data = requests.get(EITB_NAHIERAN_API_URL)
     programs = data.json().get('member')
 
@@ -119,7 +120,12 @@ def get_eitb_nahieran_programs(radio=None):
     if radio is not None:
         programs = [program for program in programs if program['radio'] == radio]
 
-    return programs
+    for program in programs:
+        name = program['title']
+        url = program['@id']
+        programs_dict[name] = {'name': name, 'url': url}
+
+    return programs_dict
 
 def list_podcast_programs(programs):
     program_list = []
@@ -225,14 +231,21 @@ def main():
         arrosa_page = get_page(ARROSA_PODCASTS_URL)
         # get the list of radios that have podcasts
         podcasts = get_arrosa_radios(arrosa_page)
+        # append Euskadi irratia and Gaztea
+        podcasts['Euskadi irratia'] = {'name': 'Euskadi irratia', 'url': ''}
+        podcasts['Gaztea'] = {'name': 'Gaztea', 'url': ''}
         # display the list of radios that have podcasts
         list_podcast_radios(podcasts)
     # the user wants to see the list of programs of a radio
     elif mode[0] == 'podcasts-radio':
-        # parse the website of the podcast of the selected radio
-        radio_page = get_page(args['url'][0])
-        #get the list of programs of the selected radio
-        programs = get_arrosa_programs(radio_page)
+        #if the selected radio is from EITB Nahieran
+        if args['name'][0] in ['Euskadi irratia', 'Gaztea']:
+            programs = get_eitb_nahieran_programs(args['name'][0])
+        else:
+            # parse the website of the podcast of the selected radio
+            radio_page = get_page(args['url'][0])
+            #get the list of programs of the selected radio
+            programs = get_arrosa_programs(radio_page)
         # display the list of programs of the selected radio
         list_podcast_programs(programs)
     # the user wants to see the list of audios of a program
