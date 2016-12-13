@@ -66,7 +66,7 @@ def get_page(url):
 
     return BeautifulSoup(r.text, 'html.parser')
 
-def get_arrosa_radios_with_podcasts(page):
+def get_arrosa_radios(page):
     radios = {}
 
     radios_li = page.select('.dcw > li')
@@ -79,7 +79,7 @@ def get_arrosa_radios_with_podcasts(page):
 
     return radios
 
-def list_radios_with_podcasts(radios):
+def list_podcast_radios(radios):
     radio_list = []
     # iterate over the contents of the list of radios to build the list
     for key, value in sorted(radios.items()):
@@ -107,7 +107,7 @@ def get_arrosa_programs(page):
 
     return programs
 
-def list_programs(programs):
+def list_podcast_programs(programs):
     program_list = []
     # iterate over the contents of the list of programs to build the list
     for key, value in sorted(programs.items()):
@@ -210,9 +210,9 @@ def main():
         # parse the website of arrosa irrati sarea
         arrosa_page = get_page(ARROSA_PODCASTS_URL)
         # get the list of radios that have podcasts
-        podcasts = get_arrosa_radios_with_podcasts(arrosa_page)
+        podcasts = get_arrosa_radios(arrosa_page)
         # display the list of radios that have podcasts
-        list_radios_with_podcasts(podcasts)
+        list_podcast_radios(podcasts)
     # the user wants to see the list of programs of a radio
     elif mode[0] == 'podcasts-radio':
         # parse the website of the podcast of the selected radio
@@ -220,7 +220,7 @@ def main():
         #get the list of programs of the selected radio
         programs = get_arrosa_programs(radio_page)
         # display the list of programs of the selected radio
-        list_programs(programs)
+        list_podcast_programs(programs)
     # the user wants to see the list of audios of a program
     elif mode[0] == 'podcasts-radio-program':
         # get the audios of the selected program
