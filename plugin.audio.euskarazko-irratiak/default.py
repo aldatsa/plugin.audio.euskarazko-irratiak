@@ -97,7 +97,7 @@ def list_podcast_radios(radios):
     xbmcplugin.setContent(addon_handle, 'songs')
     xbmcplugin.endOfDirectory(addon_handle)
 
-def get_arrosa_programs(page):
+def get_arrosa_programs(page, radio):
     programs = {}
 
     programs_li = page.select('.dcw > li')
@@ -107,7 +107,7 @@ def get_arrosa_programs(page):
         if program_a is not None:
             name = program_a.string
             url = program_a['href']
-            programs[name] = {'name': name, 'url': url}
+            programs[name] = {'name': name, 'url': url, 'radio': radio}
 
     return programs
 
@@ -123,7 +123,8 @@ def get_eitb_nahieran_programs(radio=None):
     for program in programs:
         name = program['title']
         url = program['@id']
-        programs_dict[name] = {'name': name, 'url': url}
+        radio = program['radio']
+        programs_dict[name] = {'name': name, 'url': url, 'radio': radio}
 
     return programs_dict
 
@@ -131,7 +132,7 @@ def list_podcast_programs(programs):
     program_list = []
     # iterate over the contents of the list of programs to build the list
     for key, value in sorted(programs.items()):
-        url = build_url({'mode': 'podcasts-radio-program', 'foldername': urllib.quote(value['name'].encode('utf8')), 'url': value['url']})
+        url = build_url({'mode': 'podcasts-radio-program', 'foldername': urllib.quote(value['name'].encode('utf8')), 'url': value['url'], 'name': value['name'], 'radio': value['radio']})
         li = xbmcgui.ListItem(value['name'], iconImage='DefaultFolder.png')
         program_list.append((url, li, True))
 
@@ -174,14 +175,23 @@ def get_arrosa_audios(base_url):
 
     return audios
 
+def get_eitb_nahieran_audios(url):
+    data = requests.get(url)
+    audios = data.json().get('member')
+
+    return audios
+
 def list_podcast_audios(audios):
     audio_list = []
     # iterate over the audios to build the list
     for audio in audios:
         # create a list item using the audio's title for the label
         li = xbmcgui.ListItem(audio['date'] + " - " + audio['title'])
-        # set the thumbnail image
-        li.setArt({'thumb': audio['image']})
+
+        if 'image' in audio:
+            # set the thumbnail image
+            li.setArt({'thumb': audio['image']})
+
         # set the list item to playable
         li.setProperty('IsPlayable', 'true')
         # build the plugin url for Kodi
@@ -245,13 +255,18 @@ def main():
             # parse the website of the podcast of the selected radio
             radio_page = get_page(args['url'][0])
             #get the list of programs of the selected radio
-            programs = get_arrosa_programs(radio_page)
+            programs = get_arrosa_programs(radio_page, args['name'][0])
         # display the list of programs of the selected radio
         list_podcast_programs(programs)
     # the user wants to see the list of audios of a program
     elif mode[0] == 'podcasts-radio-program':
-        # get the audios of the selected program
-        audios = get_arrosa_audios(args['url'][0])
+        #if the selected radio is from EITB Nahieran
+        if args['radio'][0] in ['Euskadi irratia', 'Gaztea']:
+            # get the audios of the selected program
+            audios = get_eitb_nahieran_audios(args['url'][0])
+        else:
+            # get the audios of the selected program
+            audios = get_arrosa_audios(args['url'][0])
         # display the list of audios of the selected program
         list_podcast_audios(audios)
     # the user selected an audio from the list
