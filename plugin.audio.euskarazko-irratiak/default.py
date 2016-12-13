@@ -14,6 +14,10 @@ from bs4 import BeautifulSoup
 JSON_URL = 'https://raw.githubusercontent.com/aldatsa/plugin.audio.euskarazko-irratiak/master/streams/streams.json'
 ARROSA_PODCASTS_URL = 'http://www.arrosasarea.eus/category/irratien-programak/'
 
+# Unofficial API for EITB Nahieran. Developed by Mikel Larreategi. Thank you very much!
+# https://github.com/erral/eitbapi
+EITB_NAHIERAN_API_URL = 'http://still-castle-99749.herokuapp.com/radio'
+
 def build_url(query):
     base_url = sys.argv[0]
     return base_url + '?' + urllib.urlencode(query)
@@ -104,6 +108,16 @@ def get_arrosa_programs(page):
             name = program_a.string
             url = program_a['href']
             programs[name] = {'name': name, 'url': url}
+
+    return programs
+
+def get_eitb_nahieran_programs(radio=None):
+    data = requests.get(EITB_NAHIERAN_API_URL)
+    programs = data.json().get('member')
+
+    # Filter by radio if necessary (the radio parameter is optional)
+    if radio is not None:
+        programs = [program for program in programs if program['radio'] == radio]
 
     return programs
 
