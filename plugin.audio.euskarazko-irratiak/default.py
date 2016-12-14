@@ -9,10 +9,10 @@ import xbmcgui
 import xbmcplugin
 # http://docs.python-requests.org/en/latest/
 import requests
-from bs4 import BeautifulSoup
+
+import resources.lib.arrosa_scraper as arrosa_scraper
 
 JSON_URL = 'https://raw.githubusercontent.com/aldatsa/plugin.audio.euskarazko-irratiak/master/streams/streams.json'
-ARROSA_PODCASTS_URL = 'http://www.arrosasarea.eus/category/irratien-programak/'
 
 # Unofficial API for EITB Nahieran. Developed by Mikel Larreategi. Thank you very much!
 # https://github.com/erral/eitbapi
@@ -60,29 +60,6 @@ def play_audio(url):
     # the list item is ready to be played by Kodi
     xbmcplugin.setResolvedUrl(addon_handle, True, listitem=play_item)
 
-def get_page(url):
-    # download the source HTML for the page using requests
-    # and parse the page using BeautifulSoup
-    r = requests.get(url)
-
-    if r.status_code == 404:
-        return False
-
-    return BeautifulSoup(r.text, 'html.parser')
-
-def get_arrosa_radios(page):
-    radios = {}
-
-    radios_li = page.select('.dcw > li')
-
-    for radio in radios_li:
-        radio_a = radio.find('a', recursive=False)
-        name = radio_a.string
-        url = radio_a['href']
-        radios[name] = {'name': name, 'url': url}
-
-    return radios
-
 def list_podcast_radios(radios):
     radio_list = []
     # iterate over the contents of the list of radios to build the list
@@ -96,20 +73,6 @@ def list_podcast_radios(radios):
     # set the content of the directory
     xbmcplugin.setContent(addon_handle, 'songs')
     xbmcplugin.endOfDirectory(addon_handle)
-
-def get_arrosa_programs(page, radio):
-    programs = {}
-
-    programs_li = page.select('.dcw > li')
-
-    for program in programs_li:
-        program_a = program.find('a', recursive=False)
-        if program_a is not None:
-            name = program_a.string
-            url = program_a['href']
-            programs[name] = {'name': name, 'url': url, 'radio': radio}
-
-    return programs
 
 def get_eitb_nahieran_programs(radio=None):
     programs_dict = {}
@@ -142,38 +105,6 @@ def list_podcast_programs(programs):
     # set the content of the directory
     xbmcplugin.setContent(addon_handle, 'songs')
     xbmcplugin.endOfDirectory(addon_handle)
-
-def get_arrosa_audios_from_page(page):
-    audios = []
-    audios_div = page.select('.post')
-
-    for audio in audios_div:
-        title = audio.select('.big-title h3 a')[0].text
-        date = audio.select('.magz-meta')[0].text.split('|')[0].strip()
-        image = ''
-        if len(audio.select('.magz-image img')) > 0:
-            image = audio.select('.magz-image img')[0]['src']
-        url = ''
-        if len(audio.select('.powerpress_link_d')) > 0:
-            url = audio.select('.powerpress_link_d')[0]['href']
-        audios.append({'title': title, 'date': date, 'image': image, 'url': url})
-
-    return audios
-
-def get_arrosa_audios(base_url):
-    index = 1
-    audios = []
-
-    while True:
-        podcast_page = get_page(base_url + 'page/' + str(index))
-
-        if podcast_page:
-            audios = audios + get_arrosa_audios_from_page(podcast_page)
-            index = index + 1
-        else:
-            break
-
-    return audios
 
 def get_eitb_nahieran_audios(url):
     data = requests.get(url)
@@ -237,10 +168,8 @@ def main():
         play_audio(args['url'][0])
     # the user wants to see the list of radios that have podcasts
     elif mode[0] == 'podcasts-radios':
-        # parse the website of arrosa irrati sarea
-        arrosa_page = get_page(ARROSA_PODCASTS_URL)
         # get the list of radios that have podcasts
-        podcasts = get_arrosa_radios(arrosa_page)
+        podcasts = arrosa_scraper.get_radios()
         # append Euskadi irratia and Gaztea
         podcasts['Euskadi irratia'] = {'name': 'Euskadi irratia', 'url': ''}
         podcasts['Gaztea'] = {'name': 'Gaztea', 'url': ''}
@@ -252,10 +181,8 @@ def main():
         if args['name'][0] in ['Euskadi irratia', 'Gaztea']:
             programs = get_eitb_nahieran_programs(args['name'][0])
         else:
-            # parse the website of the podcast of the selected radio
-            radio_page = get_page(args['url'][0])
             #get the list of programs of the selected radio
-            programs = get_arrosa_programs(radio_page, args['name'][0])
+            programs = arrosa_scraper.get_programs(args['url'][0], args['name'][0])
         # display the list of programs of the selected radio
         list_podcast_programs(programs)
     # the user wants to see the list of audios of a program
@@ -266,7 +193,7 @@ def main():
             audios = get_eitb_nahieran_audios(args['url'][0])
         else:
             # get the audios of the selected program
-            audios = get_arrosa_audios(args['url'][0])
+            audios = arrosa_scraper.get_audios(args['url'][0])
         # display the list of audios of the selected program
         list_podcast_audios(audios)
     # the user selected an audio from the list
