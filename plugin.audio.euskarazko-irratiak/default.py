@@ -11,12 +11,9 @@ import xbmcplugin
 import requests
 
 import resources.lib.arrosa_scraper as arrosa_scraper
+import resources.lib.eitb_nahieran_client as eitb_nahieran_client
 
 JSON_URL = 'https://raw.githubusercontent.com/aldatsa/plugin.audio.euskarazko-irratiak/master/streams/streams.json'
-
-# Unofficial API for EITB Nahieran. Developed by Mikel Larreategi. Thank you very much!
-# https://github.com/erral/eitbapi
-EITB_NAHIERAN_API_URL = 'http://still-castle-99749.herokuapp.com/radio'
 
 def build_url(query):
     base_url = sys.argv[0]
@@ -74,23 +71,6 @@ def list_podcast_radios(radios):
     xbmcplugin.setContent(addon_handle, 'songs')
     xbmcplugin.endOfDirectory(addon_handle)
 
-def get_eitb_nahieran_programs(radio=None):
-    programs_dict = {}
-    data = requests.get(EITB_NAHIERAN_API_URL)
-    programs = data.json().get('member')
-
-    # Filter by radio if necessary (the radio parameter is optional)
-    if radio is not None:
-        programs = [program for program in programs if program['radio'] == radio]
-
-    for program in programs:
-        name = program['title']
-        url = program['@id']
-        radio = program['radio']
-        programs_dict[name] = {'name': name, 'url': url, 'radio': radio}
-
-    return programs_dict
-
 def list_podcast_programs(programs):
     program_list = []
     # iterate over the contents of the list of programs to build the list
@@ -105,12 +85,6 @@ def list_podcast_programs(programs):
     # set the content of the directory
     xbmcplugin.setContent(addon_handle, 'songs')
     xbmcplugin.endOfDirectory(addon_handle)
-
-def get_eitb_nahieran_audios(url):
-    data = requests.get(url)
-    audios = data.json().get('member')
-
-    return audios
 
 def list_podcast_audios(audios):
     audio_list = []
@@ -179,7 +153,7 @@ def main():
     elif mode[0] == 'podcasts-radio':
         #if the selected radio is from EITB Nahieran
         if args['name'][0] in ['Euskadi irratia', 'Gaztea']:
-            programs = get_eitb_nahieran_programs(args['name'][0])
+            programs = eitb_nahieran_client.get_programs(args['name'][0])
         else:
             #get the list of programs of the selected radio
             programs = arrosa_scraper.get_programs(args['url'][0], args['name'][0])
@@ -190,7 +164,7 @@ def main():
         #if the selected radio is from EITB Nahieran
         if args['radio'][0] in ['Euskadi irratia', 'Gaztea']:
             # get the audios of the selected program
-            audios = get_eitb_nahieran_audios(args['url'][0])
+            audios = eitb_nahieran_client.get_audios(args['url'][0])
         else:
             # get the audios of the selected program
             audios = arrosa_scraper.get_audios(args['url'][0])
