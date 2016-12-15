@@ -26,6 +26,17 @@ from bs4 import BeautifulSoup
 
 ARROSA_PODCASTS_URL = 'http://www.arrosasarea.eus/category/irratien-programak/'
 
+def format_date(date):
+    months = ["urtarrila", "otsaila", "martxoa", "apirila", "maiatza", "ekaina", "uztaila", "abuztua", "iraila", "urria", "azaroa", "abendua"]
+
+    date_parts = date.split(" ")
+
+    year = date_parts[2]
+    month = "%02d" % (months.index(date_parts[0]) + 1)
+    day = date_parts[1][:-1].rjust(2, '0')
+
+    return "{0}/{1}/{2}".format(year, month, day)
+
 def get_page(url):
     # download the source HTML for the page using requests
     # and parse the page using BeautifulSoup
@@ -75,7 +86,7 @@ def get_audios_from_page(page):
 
     for audio in audios_div:
         title = audio.select('.big-title h3 a')[0].text
-        date = audio.select('.magz-meta')[0].text.split('|')[0].strip()
+        date = format_date(audio.select('.magz-meta')[0].text.split('|')[0].strip())
         image = ''
         if len(audio.select('.magz-image img')) > 0:
             image = audio.select('.magz-image img')[0]['src']
