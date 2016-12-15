@@ -7,28 +7,14 @@ import urlparse
 import xbmcaddon
 import xbmcgui
 import xbmcplugin
-# http://docs.python-requests.org/en/latest/
-import requests
 
+import resources.lib.basque_online_radios as basque_online_radios
 import resources.lib.arrosa_scraper as arrosa_scraper
 import resources.lib.eitb_nahieran_client as eitb_nahieran_client
-
-JSON_URL = 'https://raw.githubusercontent.com/aldatsa/plugin.audio.euskarazko-irratiak/master/streams/streams.json'
 
 def build_url(query):
     base_url = sys.argv[0]
     return base_url + '?' + urllib.urlencode(query)
-
-def get_streams(url):
-    """
-    Get the list of audio/streams.
-
-    :param url: str
-    :return: list
-    """
-
-    data = requests.get(url)
-    return data.json().get('streams')
 
 def list_streams(streams):
     stream_list = []
@@ -133,7 +119,7 @@ def main():
     # the user wants to see the list of streams
     elif mode[0] == 'streams':
         # get the JSON
-        streams = get_streams(JSON_URL)
+        streams = basque_online_radios.get_streams()
         # display the list of streams in Kodi
         list_streams(streams)
     # a stream from the list has been selected
