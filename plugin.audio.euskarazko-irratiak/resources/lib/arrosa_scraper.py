@@ -48,10 +48,10 @@ def get_page(url):
     return BeautifulSoup(r.text, 'html.parser')
 
 def get_radios():
+    radios = []
+
     # parse the website of arrosa irrati sarea
     page = get_page(ARROSA_PODCASTS_URL)
-
-    radios = []
 
     radios_li = page.select('.dcw > li')
 
@@ -69,15 +69,16 @@ def format_radio_name(name):
     return ' '.join(word[0].upper() + word[1:] if word != 'irratia' else word[0] + word[1:] for word in name.lower().split())
 
 def get_programs(url, radio):
+    programs = []
+
     # parse the website of the podcast of the selected radio
     page = get_page(url)
-
-    programs = []
 
     programs_li = page.select('.dcw > li')
 
     for program in programs_li:
         program_a = program.find('a', recursive=False)
+
         if program_a is not None:
             name = program_a.string
             url = program_a['href']
@@ -87,17 +88,21 @@ def get_programs(url, radio):
 
 def get_audios_from_page(page):
     audios = []
+
     audios_div = page.select('.post')
 
     for audio in audios_div:
         title = audio.select('.big-title h3 a')[0].text
         date = format_date(audio.select('.magz-meta')[0].text.split('|')[0].strip())
+
         image = ''
         if len(audio.select('.magz-image img')) > 0:
             image = audio.select('.magz-image img')[0]['src']
+
         url = ''
         if len(audio.select('.powerpress_link_d')) > 0:
             url = audio.select('.powerpress_link_d')[0]['href']
+
         audios.append({'title': title, 'date': date, 'image': image, 'url': url})
 
     return audios

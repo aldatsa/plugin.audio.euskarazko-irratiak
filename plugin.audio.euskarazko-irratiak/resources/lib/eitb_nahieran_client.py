@@ -29,6 +29,7 @@ EITB_NAHIERAN_API_URL = 'http://still-castle-99749.herokuapp.com/radio'
 
 def get_programs(radio=None):
     program_list = []
+
     data = requests.get(EITB_NAHIERAN_API_URL)
     programs = data.json().get('member')
 
