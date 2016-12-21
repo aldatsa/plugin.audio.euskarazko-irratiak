@@ -57,11 +57,16 @@ def get_radios():
 
     for radio in radios_li:
         radio_a = radio.find('a', recursive=False)
-        name = radio_a.string
+        name = format_radio_name(radio_a.string)
         url = radio_a['href']
         radios[name] = {'name': name, 'url': url}
 
     return radios
+
+def format_radio_name(name):
+    # The names of the radios scraped from the website of Arrosa irrati sarea are uppercase.
+    # They should be lowercase with every word capitalized except 'irratia' for the sake of consistency.
+    return ' '.join(word[0].upper() + word[1:] if word != 'irratia' else word[0] + word[1:] for word in name.lower().split())
 
 def get_programs(url, radio):
     # parse the website of the podcast of the selected radio
