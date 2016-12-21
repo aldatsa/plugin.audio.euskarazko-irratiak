@@ -72,7 +72,7 @@ def get_programs(url, radio):
     # parse the website of the podcast of the selected radio
     page = get_page(url)
 
-    programs = {}
+    programs = []
 
     programs_li = page.select('.dcw > li')
 
@@ -81,7 +81,7 @@ def get_programs(url, radio):
         if program_a is not None:
             name = program_a.string
             url = program_a['href']
-            programs[name] = {'name': name, 'url': url, 'radio': radio}
+            programs.append({'name': name, 'url': url, 'radio': radio})
 
     return programs
 

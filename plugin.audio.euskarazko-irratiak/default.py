@@ -59,10 +59,10 @@ def list_podcast_radios(radios):
 
 def list_podcast_programs(programs):
     program_list = []
-    # iterate over the contents of the list of programs to build the list
-    for key, value in sorted(programs.items()):
-        url = build_url({'mode': 'podcasts-radio-program', 'foldername': urllib.quote(value['name'].encode('utf8')), 'url': value['url'], 'name': urllib.quote(value['name'].encode('utf8')), 'radio': value['radio']})
-        li = xbmcgui.ListItem(value['name'], iconImage='DefaultFolder.png')
+    # iterate over the contents of the list of programs
+    for program in programs:
+        url = build_url({'mode': 'podcasts-radio-program', 'foldername': urllib.quote(program['name'].encode('utf8')), 'url': program['url'], 'name': urllib.quote(program['name'].encode('utf8')), 'radio': program['radio']})
+        li = xbmcgui.ListItem(program['name'], iconImage='DefaultFolder.png')
         program_list.append((url, li, True))
 
     # add list to Kodi per Martijn

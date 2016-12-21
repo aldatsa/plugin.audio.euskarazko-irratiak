@@ -28,7 +28,7 @@ import requests
 EITB_NAHIERAN_API_URL = 'http://still-castle-99749.herokuapp.com/radio'
 
 def get_programs(radio=None):
-    programs_dict = {}
+    program_list = []
     data = requests.get(EITB_NAHIERAN_API_URL)
     programs = data.json().get('member')
 
@@ -40,9 +40,9 @@ def get_programs(radio=None):
         name = program['title']
         url = program['@id']
         radio = program['radio']
-        programs_dict[name] = {'name': name, 'url': url, 'radio': radio}
+        program_list.append({'name': name, 'url': url, 'radio': radio})
 
-    return programs_dict
+    return programs_list
 
 def get_audios(url):
     data = requests.get(url)
