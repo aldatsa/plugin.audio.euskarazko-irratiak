@@ -98,7 +98,7 @@ def list_podcast_audios(audios):
         li.setProperty('IsPlayable', 'true')
 
         # build the plugin url for Kodi
-        url = build_url({'mode': 'stream', 'url': audio['url'], 'title': audio['date'] + " - " + urllib.quote(audio['title'].encode('utf8'))})
+        url = build_url({'mode': 'stream', 'url': audio['url'].encode('utf8'), 'title': audio['date'] + " - " + urllib.quote(audio['title'].encode('utf8'))})
 
         # add the current list item to a list
         audio_list.append((url, li, False))
