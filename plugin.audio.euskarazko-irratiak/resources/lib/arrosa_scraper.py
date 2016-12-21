@@ -51,7 +51,7 @@ def get_radios():
     # parse the website of arrosa irrati sarea
     page = get_page(ARROSA_PODCASTS_URL)
 
-    radios = {}
+    radios = []
 
     radios_li = page.select('.dcw > li')
 
@@ -59,7 +59,7 @@ def get_radios():
         radio_a = radio.find('a', recursive=False)
         name = format_radio_name(radio_a.string)
         url = radio_a['href']
-        radios[name] = {'name': name, 'url': url}
+        radios.append({'name': name, 'url': url})
 
     return radios
 

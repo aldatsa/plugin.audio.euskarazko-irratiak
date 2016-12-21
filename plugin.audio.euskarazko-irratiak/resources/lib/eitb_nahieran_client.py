@@ -42,7 +42,7 @@ def get_programs(radio=None):
         radio = program['radio']
         program_list.append({'name': name, 'url': url, 'radio': radio})
 
-    return programs_list
+    return program_list
 
 def get_audios(url):
     data = requests.get(url)

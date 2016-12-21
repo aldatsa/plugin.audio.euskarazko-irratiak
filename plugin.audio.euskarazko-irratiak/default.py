@@ -3,6 +3,7 @@ import os
 import sys
 import urllib
 import urlparse
+import operator
 # http://mirrors.kodi.tv/docs/python-docs/
 import xbmcaddon
 import xbmcgui
@@ -45,10 +46,10 @@ def play_audio(url):
 
 def list_podcast_radios(radios):
     radio_list = []
-    # iterate over the contents of the list of radios to build the list
-    for key, value in sorted(radios.items()):
-        url = build_url({'mode': 'podcasts-radio', 'foldername': value['name'], 'url': value['url'], 'name': value['name']})
-        li = xbmcgui.ListItem(value['name'], iconImage='DefaultFolder.png')
+    # iterate over the contents of the list of radios
+    for radio in sorted(radios, key=operator.itemgetter('name')):
+        url = build_url({'mode': 'podcasts-radio', 'foldername': radio['name'], 'url': radio['url'], 'name': radio['name']})
+        li = xbmcgui.ListItem(radio['name'], iconImage='DefaultFolder.png')
         radio_list.append((url, li, True))
     # add list to Kodi per Martijn
     # http://forum.kodi.tv/showthread.php?tid=209948&pid=2094170#pid2094170
@@ -131,8 +132,8 @@ def main():
         # get the list of radios that have podcasts
         podcasts = arrosa_scraper.get_radios()
         # append Euskadi irratia and Gaztea
-        podcasts['Euskadi irratia'] = {'name': 'Euskadi irratia', 'url': ''}
-        podcasts['Gaztea'] = {'name': 'Gaztea', 'url': ''}
+        podcasts.append({'name': 'Euskadi irratia', 'url': ''})
+        podcasts.append({'name': 'Gaztea', 'url': ''})
         # display the list of radios that have podcasts
         list_podcast_radios(podcasts)
     # the user wants to see the list of programs of a radio
