@@ -150,12 +150,11 @@ def main():
 
     # the user wants to see the list of radios that have podcasts
     elif mode[0] == 'podcasts-radios':
-        # get the list of radios that have podcasts
+        # get the list of radios from Arrosa irrati sarea that have podcasts
         podcasts = arrosa_scraper.get_radios()
 
-        # append Euskadi irratia and Gaztea
-        podcasts.append({'name': 'Euskadi irratia', 'url': ''})
-        podcasts.append({'name': 'Gaztea', 'url': ''})
+        # append the list of radios from EITB Nahieran that have podcasts in Basque language
+        podcasts = podcasts + eitb_nahieran_client.get_radios()
 
         # append Etzi.pm
         podcasts.append({'name': 'Etzi Portu Maritimoa', 'url': ''})

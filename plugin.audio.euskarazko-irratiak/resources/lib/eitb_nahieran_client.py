@@ -27,6 +27,17 @@ import requests
 # https://github.com/erral/eitbapi
 EITB_NAHIERAN_API_URL = 'http://still-castle-99749.herokuapp.com/radio'
 
+radios = [{
+    'name': 'Euskadi irratia',
+    'url': ''
+}, {
+    'name': 'Gaztea',
+    'url': ''
+}]
+
+def get_radios():
+    return radios
+
 def get_programs(radio=None):
     program_list = []
 
@@ -50,3 +61,5 @@ def get_audios(url):
     audios = data.json().get('member')
 
     return audios
+
+print get_radios()
