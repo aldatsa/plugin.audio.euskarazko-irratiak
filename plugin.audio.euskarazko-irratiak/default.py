@@ -12,6 +12,7 @@ import xbmcplugin
 import resources.lib.basque_online_radios as basque_online_radios
 import resources.lib.arrosa_scraper as arrosa_scraper
 import resources.lib.eitb_nahieran_client as eitb_nahieran_client
+import resources.lib.etzi_pm_client as etzi_pm_client
 
 def build_url(query):
     base_url = sys.argv[0]
@@ -156,16 +157,21 @@ def main():
         podcasts.append({'name': 'Euskadi irratia', 'url': ''})
         podcasts.append({'name': 'Gaztea', 'url': ''})
 
+        # append Etzi.pm
+        podcasts.append({'name': 'Etzi Portu Maritimoa', 'url': ''})
+
         # display the list of radios that have podcasts
         list_podcast_radios(podcasts)
 
     # the user wants to see the list of programs of a radio
     elif mode[0] == 'podcasts-radio':
-        #if the selected radio is from EITB Nahieran
+        # if the selected radio is from EITB Nahieran
         if args['name'][0] in ['Euskadi irratia', 'Gaztea']:
             programs = eitb_nahieran_client.get_programs(args['name'][0])
+        elif args['name'][0] == 'Etzi Portu Maritimoa':
+            programs = etzi_pm_client.get_programs()
         else:
-            #get the list of programs of the selected radio
+            # get the list of programs of the selected radio
             programs = arrosa_scraper.get_programs(args['url'][0], args['name'][0])
 
         # display the list of programs of the selected radio
@@ -177,6 +183,8 @@ def main():
         if args['radio'][0] in ['Euskadi irratia', 'Gaztea']:
             # get the audios of the selected program
             audios = eitb_nahieran_client.get_audios(args['url'][0])
+        elif args['radio'][0] == 'Etzi Portu Maritimoa':
+            audios = etzi_pm_client.get_audios(args['url'][0])
         else:
             # get the audios of the selected program
             audios = arrosa_scraper.get_audios(args['url'][0])
