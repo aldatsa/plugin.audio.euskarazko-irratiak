@@ -31,6 +31,14 @@ from bs4 import BeautifulSoup, BeautifulStoneSoup
 ETZI_PM_GRAMOFONOA_API_URL = 'http://etzi.pm/wp-json/wp/v2/posts?categories=794'
 ETZI_PM_PLACEHOLDER_IMAGE_URL = 'http://etzi.pm/wp-content/themes/newsmag-etzi/assets/images/picture_placeholder.jpg'
 
+radios = [{
+    'name': 'Etzi Portu Maritimoa',
+    'url': ''
+}]
+
+def get_radios():
+    return radios
+
 def get_programs():
     program_list = []
 

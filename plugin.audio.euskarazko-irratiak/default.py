@@ -156,8 +156,8 @@ def main():
         # append the list of radios from EITB Nahieran that have podcasts in Basque language
         podcasts = podcasts + eitb_nahieran_client.get_radios()
 
-        # append Etzi.pm
-        podcasts.append({'name': 'Etzi Portu Maritimoa', 'url': ''})
+        # append the list of radios from Etzi.pm
+        podcasts = podcasts + etzi_pm_client.get_radios()
 
         # display the list of radios that have podcasts
         list_podcast_radios(podcasts)
