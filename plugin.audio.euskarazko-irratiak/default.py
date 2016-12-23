@@ -164,29 +164,35 @@ def main():
 
     # the user wants to see the list of programs of a radio
     elif mode[0] == 'podcasts-radio':
+        radio_name = args['name'][0]
+
         # if the selected radio is from EITB Nahieran
-        if args['name'][0] in ['Euskadi irratia', 'Gaztea']:
-            programs = eitb_nahieran_client.get_programs(args['name'][0])
-        elif args['name'][0] == 'Etzi Portu Maritimoa':
+        if eitb_nahieran_client.is_in_list_of_radios(radio_name):
+            programs = eitb_nahieran_client.get_programs(radio_name)
+        # else if the selected radio is from Etzi.pm
+        elif etzi_pm_client.is_in_list_of_radios(radio_name):
             programs = etzi_pm_client.get_programs()
+        # else is from Arrosa irrati sarea
         else:
-            # get the list of programs of the selected radio
-            programs = arrosa_scraper.get_programs(args['url'][0], args['name'][0])
+            programs = arrosa_scraper.get_programs(args['url'][0], radio_name)
 
         # display the list of programs of the selected radio
         list_podcast_programs(programs)
 
     # the user wants to see the list of audios of a program
     elif mode[0] == 'podcasts-radio-program':
-        #if the selected radio is from EITB Nahieran
-        if args['radio'][0] in ['Euskadi irratia', 'Gaztea']:
-            # get the audios of the selected program
-            audios = eitb_nahieran_client.get_audios(args['url'][0])
-        elif args['radio'][0] == 'Etzi Portu Maritimoa':
-            audios = etzi_pm_client.get_audios(args['url'][0])
+        radio_name = args['radio'][0]
+        program_url = args['url'][0]
+
+        # if the selected radio is from EITB Nahieran
+        if eitb_nahieran_client.is_in_list_of_radios(radio_name):
+            audios = eitb_nahieran_client.get_audios(program_url)
+        # else if the selected radio is from Etzi.pm
+        elif etzi_pm_client.is_in_list_of_radios(radio_name):
+            audios = etzi_pm_client.get_audios(program_url)
+        # else is from Arrosa irrati sarea
         else:
-            # get the audios of the selected program
-            audios = arrosa_scraper.get_audios(args['url'][0])
+            audios = arrosa_scraper.get_audios(program_url)
 
         # display the list of audios of the selected program
         list_podcast_audios(audios)

@@ -38,6 +38,13 @@ radios = [{
 def get_radios():
     return radios
 
+def is_in_list_of_radios(name):
+    for radio in radios:
+        if radio['name'] == name:
+            return True
+
+    return False
+
 def get_programs(radio=None):
     program_list = []
 
