@@ -9,9 +9,9 @@
         <provides>audio</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">Listen to Basque language radio stations</summary>
-        <summary lang="eu">Euskarazko irratiak zuzenean (eta podcast-ak)</summary>
-        <description lang="en">Listen to nearly 30 radio stations that broadcast, completely or at least partially, in Basque language.</description>
+        <summary lang="en">Listen to Basque language radio stations and podcasts</summary>
+        <summary lang="eu">Euskarazko irratiak zuzenean eta podcast-ak</summary>
+        <description lang="en">Listen to nearly 30 radio stations that broadcast, completely or at least partially, in Basque language. From version 2.0.0 onwards you can listen to a lot of podcasts in Basque language too.</description>
         <description lang="eu">Plugin honi esker programazio osoa, edo gutxienez zati bat, euskaraz emititzen duten ia 30 irrati entzun ditzakezu zuzenean. 2.0.0 bertsiotik aurrera euskarazko podcast mordo bat ere entzun dezakezu.</description>
         <platform>all</platform>
         <language>eu</language>
