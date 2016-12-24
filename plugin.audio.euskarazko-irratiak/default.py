@@ -14,6 +14,9 @@ import resources.lib.arrosa_scraper as arrosa_scraper
 import resources.lib.eitb_nahieran_client as eitb_nahieran_client
 import resources.lib.etzi_pm_client as etzi_pm_client
 
+ADDONID = 'plugin.audio.euskarazko-irratiak'
+ADDON = xbmcaddon.Addon(ADDONID)
+
 def build_url(query):
     base_url = sys.argv[0]
     return base_url + '?' + urllib.urlencode(query)
@@ -114,14 +117,14 @@ def list_podcast_audios(audios):
 
 def show_main_menu():
     # Create menu directory for the live radios
-    url = build_url({'mode': 'streams', 'foldername': 'Irratiak zuzenean'})
-    li = xbmcgui.ListItem('Irratiak zuzenean', iconImage='DefaultFolder.png')
+    url = build_url({'mode': 'streams', 'foldername': ADDON.getLocalizedString(30001)})
+    li = xbmcgui.ListItem(ADDON.getLocalizedString(30001), iconImage='DefaultFolder.png')
     xbmcplugin.addDirectoryItem(handle=addon_handle, url=url,
                                 listitem=li, isFolder=True)
 
     # Create menu directory for the podcasts
-    url = build_url({'mode': 'podcasts-radios', 'foldername': 'Podcast-ak'})
-    li = xbmcgui.ListItem('Podcast-ak', iconImage='DefaultFolder.png')
+    url = build_url({'mode': 'podcasts-radios', 'foldername': ADDON.getLocalizedString(30002)})
+    li = xbmcgui.ListItem(ADDON.getLocalizedString(30002), iconImage='DefaultFolder.png')
     xbmcplugin.addDirectoryItem(handle=addon_handle, url=url,
                                 listitem=li, isFolder=True)
 
