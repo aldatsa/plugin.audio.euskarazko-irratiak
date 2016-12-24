@@ -18,5 +18,7 @@
         <license>GNU General Public License, v3</license>
         <source>https://github.com/aldatsa/plugin.audio.euskarazko-irratiak</source>
         <email>asier.iturralde abildua gmail.com</email>
+        <news>v2.0.0 (2016-12-24)
+            + Now you can listen to a lot of podcasts in Basque language</news>
     </extension>
 </addon>
