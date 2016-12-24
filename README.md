@@ -1,10 +1,10 @@
 # plugin.audio.euskarazko-irratiak
 
-Listen to nearly 30 radio stations that broadcast, completely or at least partially, in Basque language on your KODI media center.
+Listen to nearly 30 radio stations that broadcast, completely or at least partially, in Basque language on your KODI media center. From version 2.0.0 onwards you can listen to a lot of podcasts in Basque language too.
 
 Available on KODI's official add-on repository: http://addons.kodi.tv/show/plugin.audio.euskarazko-irratiak/
 
-Plugin honi esker programazio osoa, edo gutxienez zati bat, euskaraz emititzen duten ia 30 irrati zuzenean entzun ditzakezu zure KODI multimedia zentroan.
+Plugin honi esker programazio osoa, edo gutxienez zati bat, euskaraz emititzen duten ia 30 irrati zuzenean entzun ditzakezu zure KODI multimedia zentroan. 2.0.0 bertsiotik aurrera euskarazko podcast mordo bat ere entzun dezakezu.
 
 KODIren gehigarrien errepositorio ofizialean erabilgarri: http://addons.kodi.tv/show/plugin.audio.euskarazko-irratiak/
 
