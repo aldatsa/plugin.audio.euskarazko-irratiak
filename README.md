@@ -21,11 +21,11 @@ Artikulu honetan duzu jakin beharreko guztia: plugina nola instalatu, KODI euska
 Artikulu honetan aurkituko dituzu egin beharrekoaren azalpenak pausoz pauso:
 http://www.iametza.eus/euskara/bloga/euskarazko-irratiak-kodi-multimedia-zentroan-entzuteko-plugina#kodiren-bertsioa-hb-16
 
-Hala ere, nahiago baduzu zip fitxategitik ere instala dezakezu, baina kontutan izan pluginaren bertsio berri bat dagoenean berriz ere eskuz instalatu beharko duzula. [Klikatu hemen zip fitxategia deskargatzeko](https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/releases/download/v1.0.3/plugin.audio.euskarazko-irratiak-1.0.3.zip).
+Hala ere, nahiago baduzu zip fitxategitik ere instala dezakezu, baina kontutan izan pluginaren bertsio berri bat dagoenean berriz ere eskuz instalatu beharko duzula. [Klikatu hemen zip fitxategia deskargatzeko](https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/releases/download/v2.0.0/plugin.audio.euskarazko-irratiak-2.0.0.zip).
 
 ### KODIren bertsioa < 16 (Recalbox, OpenELEC...)
 
-KODIren bertsio zaharragoetan euskarazko irratiak entzuteko plugina instalatzeko jarraitu beharreko pausoak desberdinak dira. Bertsio hauetarako plugina gordailu ofizialean ez dagoenez zip fitxategitik instalatu behar da. Aurrerago pluginaren bertsio berriak badaude, kasu honetan plugina eskuz eguneratu beharko duzu. [Klikatu hemen zip fitxategia deskargatzeko](https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/releases/download/v1.0.3-for-older-kodi-versions/plugin.audio.euskarazko-irratiak-1.0.3-for-older-kodi-versions.zip).
+KODIren bertsio zaharragoetan euskarazko irratiak entzuteko plugina instalatzeko jarraitu beharreko pausoak desberdinak dira. Bertsio hauetarako plugina gordailu ofizialean ez dagoenez zip fitxategitik instalatu behar da. Aurrerago pluginaren bertsio berriak badaude, kasu honetan plugina eskuz eguneratu beharko duzu. [Klikatu hemen zip fitxategia deskargatzeko](https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/releases/download/v2.0.0-for-older-kodi-versions/plugin.audio.euskarazko-irratiak-2.0.0-for-older-kodi-versions.zip).
 
 [Gamerauntsiak euskaratutako Recalbox banaketa](http://gamerauntsia.eus/bloga/recalbox-euskaraz/)ren erabiltzailea bazara, zip fitxategitik instalatu beharko duzu, KODIren 15.2 bertsioa erabiltzen baitu. OpenELEC banaketak ere KODIren bertsio zaharrago bat erabiltzen du (Mila esker jakinarazteagatik [@ander2](https://github.com/ander2/)).
 
