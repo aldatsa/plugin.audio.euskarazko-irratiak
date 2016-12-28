@@ -16,6 +16,10 @@
         "url": "http://213.195.77.68:8080/zuzenean3",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/ataria-irratia.jpg"
     }, {
+        "name": "Beleixe irratia",
+        "url": "http://server8.20comunicacion.com:8016/",
+        "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/beleixe.jpeg"
+    }, {
         "name": "Bilbo Hiria irratia",
         "url": "http://groove.wavestreamer.com:7429",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/bilbo-hiria-irratia.gif"
