@@ -124,6 +124,10 @@
         "url": "http://irratia.zintzilik.net/zintzilik.ogg",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/zintzilik-irratia.png"
     }, {
+        "name": "28 irratia",
+        "url": "http://radioserver4.profesionalhosting.com:8120/",
+        "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/28irratia.jpg"
+    }, {
         "name": "97FM irratia",
         "url": "http://airean.info:8000/97irratia.ogg",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/97fm-irratia.jpg"
