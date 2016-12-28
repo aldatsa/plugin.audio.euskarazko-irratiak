@@ -64,6 +64,10 @@
         "url": "http://hdstreamflash-lh.akamaihd.net/i/Gaztea_Irratia_1@109222/index_128_a-p.m3u8",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/gaztea.jpg"
     }, {
+        "name": "Goierri irratia",
+        "url": "http://radioserver3.profesionalhosting.com:8048/",
+        "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/goierri-irratia.jpg"
+    }, {
         "name": "Gure Irratia",
         "url": "http://heberg.radioludo.com:8007/stream",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/gure-irratia.jpeg"
