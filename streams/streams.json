@@ -32,6 +32,10 @@
         "url": "http://46.105.24.175:9000/eguzki.mp3",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/eguzki-irratia.jpg"
     }, {
+        "name": "Erlo irratia",
+        "url": "http://radioserver3.profesionalhosting.com:8046/",
+        "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/erlo.jpeg"
+    }, {
         "name": "EITB irratia",
         "url": "http://hdstreamflash-lh.akamaihd.net/i/EITB_Irratia_1@109221/index_128_a-p.m3u8",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/eitb-irratia.jpg"
