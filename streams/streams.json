@@ -45,7 +45,7 @@
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/erlo.jpeg"
     }, {
         "name": "EITB irratia",
-        "url": "http://hdstreamflash-lh.akamaihd.net/i/EITB_Irratia_1@109221/index_128_a-p.m3u8",
+        "url": "https://etbaeitbmusnogeo-lh.akamaihd.net/i/EITBMUSIKA_1@594815/index_128_a-p.m3u8",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/eitb-irratia.jpg"
     }, {
         "name": "Esan Erran irratia",
@@ -53,7 +53,7 @@
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/esan-erran-irratia.jpg"
     }, {
         "name": "Euskadi irratia",
-        "url": "http://hdstreamflash-lh.akamaihd.net/i/Euskadi_Irratia_1@109218/index_96_a-p.m3u8",
+        "url": "https://etbaeirratinogeo-lh.akamaihd.net/i/EIRRATIA_1@594816/index_128_a-p.m3u8",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/euskadi-irratia.jpg"
     }, {
         "name": "Euskalerria irratia",
