@@ -1,19 +1,19 @@
 {
     "streams": [{
         "name": "28 irratia",
-        "url": "http://radioserver4.profesionalhosting.com:8120/",
+        "url": "https://radioserver11.profesionalhosting.com:19759/stream",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/28irratia.jpg"
     }, {
         "name": "97FM irratia",
-        "url": "http://airean.info:8000/97irratia.ogg",
+        "url": "https://airtime.97irratia.info/radio-ssl.ogg",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/97fm-irratia.jpg"
     }, {
         "name": "Antxeta irratia",
-        "url": "http://82.165.24.146:8000/antxetairratia.mp3",
+        "url": "https://streaming.radiocast.pro:8443/antxeta",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/antxeta-irratia.png"
     }, {
         "name": "Arraio irratia",
-        "url": "http://www.arraio.net:9001/irratia.ogg",
+        "url": "http://irratia.arraio.eus:9001/irratia.ogg",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/arraio-irratia.jpg"
     }, {
         "name": "Arrate irratia",
@@ -21,7 +21,7 @@
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/arrate-irratia.jpg"
     }, {
         "name": "Ataria irratia",
-        "url": "http://213.195.77.68:8080/zuzenean3",
+        "url": "https://server8.emitironline.com:18444/stream",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/ataria-irratia.jpg"
     }, {
         "name": "Beleixe irratia",
@@ -29,23 +29,23 @@
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/beleixe.jpeg"
     }, {
         "name": "Bilbo Hiria irratia",
-        "url": "http://groove.wavestreamer.com:7429",
+        "url": "https://streaming.radiocast.pro:8443/bilbohiria",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/bilbo-hiria-irratia.gif"
     }, {
         "name": "Bizkaia irratia",
-        "url": "http://188.93.73.98:8076/",
+        "url": "https://nerbioi.radiopopular.eus/bizkaiairratia2",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/bizkaia-irratia.jpg"
     }, {
         "name": "Eguzki irratia",
-        "url": "http://46.105.24.175:9000/eguzki.mp3",
+        "url": "https://streaming.eguzki.eus/eguzki.mp3",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/eguzki-irratia.jpg"
     }, {
         "name": "Erlo irratia",
-        "url": "http://radioserver3.profesionalhosting.com:8046/",
+        "url": "https://radioserver11.profesionalhosting.com:19166/stream",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/erlo.jpeg"
     }, {
         "name": "EITB irratia",
-        "url": "https://etbaeitbmusnogeo-lh.akamaihd.net/i/EITBMUSIKA_1@594815/index_128_a-p.m3u8",
+        "url": "https://live-dvr.eitb-fastly.cross-media.es/live-content/eitbmusika-hls/master.m3u8",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/eitb-irratia.jpg"
     }, {
         "name": "Esan Erran irratia",
@@ -53,39 +53,39 @@
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/esan-erran-irratia.jpg"
     }, {
         "name": "Euskadi irratia",
-        "url": "https://etbaeirratinogeo-lh.akamaihd.net/i/EIRRATIA_1@594816/index_128_a-p.m3u8",
+        "url": "https://live-dvr.eitb-fastly.cross-media.es/live-content/euskadirratia-hls/master.m3u8",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/euskadi-irratia.jpg"
     }, {
         "name": "Euskalerria irratia",
-        "url": "http://server4.beatproducciones.com:8014/",
+        "url": "https://server9.emitironline.com:8014/stream",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/euskalerria-irratia.png"
     }, {
         "name": "Gaztea irratia",
-        "url": "http://hdstreamflash-lh.akamaihd.net/i/Gaztea_Irratia_1@109222/index_128_a-p.m3u8",
+        "url": "https://live-dvr.eitb-fastly.cross-media.es/live-content/gaztea-hls/master.m3u8",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/gaztea.jpg"
     }, {
         "name": "Goierri irratia",
-        "url": "http://radioserver3.profesionalhosting.com:8048/",
+        "url": "https://radioserver11.profesionalhosting.com:19142/stream",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/goierri-irratia.jpg"
     }, {
         "name": "Gure Irratia",
         "url": "http://heberg.radioludo.com:8007/stream",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/gure-irratia.jpeg"
     }, {
-        "name": "Hala Bedi irratia",
-        "url": "http://server3.20comunicacion.com:8022/",
+        "name": "Hala Bedi 1 irratia",
+        "url": "https://halabedi.eus:8443/hb1_64.mp3",
+        "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/hala-bedi-irratia.png"
+        }, {
+        "name": "Hala Bedi 2 irratia",
+        "url": "https://halabedi.eus:8443/hb2_64.mp3",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/hala-bedi-irratia.png"
     }, {
-        "name": "Info7 irratia",
-        "url": "http://stream.info7.com/info7.mp3",
-        "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/info7-irratia.png"
-    }, {
         "name": "Irati irratia",
-        "url": "http://188.93.73.98:8102/",
+        "url": "http://188.93.73.7:8102/stream",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/irati-irratia.gif"
     }, {
         "name": "Irola irratia",
-        "url": "http://212.47.248.124/_stream/irola_irratia.mp3",
+        "url": "https://s.streampunk.cc/_stream/irola_irratia.mp3",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/irola-irratia.jpg"
     }, {
         "name": "Irulegiko irratia",
@@ -97,15 +97,19 @@
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/kontrako-eztarrixe-irratia.png"
     }, {
         "name": "Miribilla irratia",
-        "url": "http://miribilla.dyndns.org:8000/",
+        "url": "http://bizkaia.dyndns.org:8011/;stream.mp3",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/miribilla-irratia.png"
     }, {
+        "name": "Naiz irratia",
+        "url": "https://zuzenean.naiz.eus/naiz_irratia.mp3",
+        "logo": "https://gitlab.com/aldatsa/plugin.audio.euskarazko-irratiak/-/raw/master/streams/logos/naiz-irratia.png"
+    }, {
         "name": "Oiartzun irratia",
-        "url": "http://50.7.129.122:8341/",
+        "url": "http://176.9.123.4:55019/;stream.mp3",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/oiartzun-irratia.jpg"
     }, {
         "name": "Radio Kultura irratia",
-        "url": "http://94.23.27.6:8254/",
+        "url": "http://94.23.27.6:8254/live.m3u",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/radio-kultura-irratia.gif"
     }, {
         "name": "Radixu irratia",
@@ -113,23 +117,19 @@
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/radixu-irratia.png"
     }, {
         "name": "Ttan Ttakun irratia",
-        "url": "https://ttanttakun.org/stream/ttanttakun.ogg",
+        "url": "https://ttanttakun.eus/stream/ttanttakun.ogg",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/ttan-ttakun-irratia.png"
     }, {
         "name": "Txapa irratia",
-        "url": "http://zerb01.baibalab.net:8000/txapa.mp3",
+        "url": "http://halabedi.eus:8000/txapa.mp3",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/txapa-irratia.png"
     }, {
-        "name": "Uhinak irratia",
-        "url": "http://82.130.201.125:8000/uhinak",
-        "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/uhinak-irratia.png"
-    }, {
         "name": "Xiberoko Botza",
-        "url": "http://82.165.24.146:8000/xiberokobotza.mp3",
+        "url": "http://87.106.192.209:8001/xiberokobotza.mp3",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/xiberoko-botza.png"
     }, {
         "name": "Xorroxin irratia",
-        "url": "http://xorroxinirratia.streaming-pro.com:8053/",
+        "url": "https://xorroxinirratia.streaming-pro.com:6002/xorroxinirratia.mp3",
         "logo": "https://github.com/aldatsa/plugin.audio.euskarazko-irratiak/raw/master/streams/logos/xorroxin-irratia.jpeg"
     }, {
         "name": "Zintzilik irratia",
